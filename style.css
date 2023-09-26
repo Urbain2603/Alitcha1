@@ -1,0 +1,173 @@
+/* Styles spécifiques pour custom-style.css */
+
+/* Réinitialisation des styles par défaut du navigateur */
+body, h1, h2, form, label, input, button, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b15b8;
+    color: #333;
+    margin: 14;
+    padding: 16;
+    overflow-x: hidden; /* Empêcher la barre de défilement horizontale */
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(23, 169, 133);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden; /* Ajouter un défilement vertical si nécessaire */
+}
+
+/* Formulaire de création de tâches */
+#task-form {
+    margin-bottom: 20px;
+}
+
+#task-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Animation pour les boutons */
+button {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Effet de zoom sur le survol */
+}
+
+/* Mise en forme pour la bannière "Avec retard" */
+.banner-late {
+    background-color: #f86c6b;
+    color: rgb(30, 14, 150);
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Liste de tâches */
+#task-list h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#tasks {
+    list-style: none;
+    max-height: 400px; /* Hauteur maximale pour la liste de tâches, ajoutez un défilement vertical si nécessaire */
+    overflow-y: auto; /* Ajouter une barre de défilement vertical si la liste dépasse la hauteur maximale */
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Ajout d'une transition pour une expérience utilisateur plus fluide */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li.complete {
+    background-color: #c3e6cb; /* Couleur de fond pour les tâches terminées */
+}
+
+/* Animation pour les tâches en retard */
+li.late {
+    animation: pulse 1s infinite alternate;
+    background-color: #f86c6b; /* Couleur de fond pour les tâches en retard */
+    color: #fff; /* Couleur du texte en retard */
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Style pour l'élément en cours de glissement */
+li.dragging {
+    opacity: 0.6; /* Réduire l'opacité pendant le glissement */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    #task-list h2 {
+        font-size: 20px;
+    }
+
+    li {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Style pour l'élément en cours de glissement */
+li.dragging {
+    opacity: 0.6;
+}
+
+/* Style pour l'endroit où vous pouvez déposer un élément */
+li.drop-target {
+    border: 2px dashed #007bff;
+}
+

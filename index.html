@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-style.css">
+</head>
+<body>
+    <header>
+        <h1>Liste de Tâches</h1>
+    </header>
+    <main>
+        <section id="task-form">
+            <h2>Ajouter une Tâche</h2>
+            <form id="add-task-form">
+                <label for="task-text">Tâche :</label>
+                <input type="text" id="task-text" placeholder="Ajouter une nouvelle tâche" required>
+                <label for="task-date">Date :</label>
+                <input type="date" id="task-date" required>
+                <label for="task-time">Heure :</label>
+                <input type="time" id="task-time" required>
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+        <section id="task-list">
+            <h2>Liste de Tâches</h2>
+            <ul id="tasks" class="sortable">
+                <!-- Les tâches seront ajoutées dynamiquement ici via JavaScript -->
+            </ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

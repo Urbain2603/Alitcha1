@@ -1,0 +1,122 @@
+/* Styles spécifiques pour custom-style.css */
+
+/* Styles pour le formulaire de création de tâches */
+#add-task-form {
+    margin-bottom: 20px;
+    background-color: #f0f0f0; /* Couleur de fond du formulaire */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#add-task-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333; /* Couleur du texte */
+}
+
+/* Styles pour les boutons du formulaire */
+#add-task-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-task-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Styles pour les boutons dans la liste de tâches */
+.complete-button,
+.edit-button,
+.delete-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Empêcher le rétrécissement excessif des boutons */
+}
+
+
+.complete-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Styles pour les tâches complétées */
+li.complete {
+    background-color: #c3e6cb; /* Couleur de fond pour les tâches terminées */
+    transition: background-color 0.3s ease;
+}
+
+/* Styles pour les tâches en retard */
+li.late {
+    background-color: #f86c6b; /* Couleur de fond pour les tâches en retard */
+    color: #fff; /* Couleur du texte en retard */
+    animation: pulse 1s infinite alternate;
+}
+
+/* Animation pour les tâches en retard */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Mise en page flexible pour les boutons */
+li > div {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end; /* Aligner les boutons à droite */
+    flex-wrap: wrap; /* Permettre le retour à la ligne des boutons si nécessaire */
+}
+
+.complete-button,
+.edit-button,
+.delete-button {
+    margin-top: 5px;
+    flex-shrink: 0; /* Empêcher le rétrécissement excessif des boutons */
+}
+
+/* Réorganiser les boutons pour les petits écrans */
+@media (max-width: 768px) {
+    li > div {
+        flex-direction: column;
+        align-items: flex-start; /* Aligner les boutons à gauche */
+    }
+
+    .complete-button,
+    .edit-button,
+    .delete-button {
+        margin-top: 5px;
+        margin-right: 0; /* Supprimer la marge droite pour éviter le débordement */
+    }
+}
+
+
+/* Styles pour l'élément en cours de glissement */
+li.dragging {
+    opacity: 0.6; /* Réduire l'opacité pendant le glissement */
+}
+
+/* Style pour l'endroit où vous pouvez déposer un élément */
+li.drop-target {
+    border: 2px dashed #007bff; /* Style de la bordure de la zone de dépôt */
+    transition: border-color 0.3s ease;
+}
